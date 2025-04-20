@@ -1,5 +1,7 @@
-build:
-  docker:
-    worker: Dockerfile
-run:
-  worker: bash start
+services:
+  - type: worker
+    name: anonxmusic
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    startCommand: bash start
